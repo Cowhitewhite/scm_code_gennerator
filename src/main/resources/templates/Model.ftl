@@ -21,10 +21,9 @@ import java.math.BigDecimal;
 </#if>
 
 /**
- * ${tableNameCn}
- *
- * @author ${author}
- * @date ${date}
+ * @Description:${tableNameCn}
+ * @Author:${author}
+ * @Date:${date}
  */
 @Data
 public class ${changeTableName} extends BaseEntity implements Serializable{

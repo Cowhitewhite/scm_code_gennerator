@@ -22,9 +22,9 @@ import java.com.gog.generator.util.Date;
 </#if>
 
 /**
- * 描述：${tableNameCn} 查询Req
- * @author ${author}
- * @date ${date}
+ * @Description:${tableNameCn} 查询Req
+ * @author:${author}
+ * @date:${date}
  */
 @Data
 public class ${changeTableName}Req extends BaseRequest{

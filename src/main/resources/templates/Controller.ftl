@@ -19,9 +19,9 @@ import java.util.Map;
 <#assign Req=changeTableName+"Req">
 <#assign req=changeTableName?uncap_first+"Req">
 /**
-* 描述：${tableNameCn}controller
-* @author ${author}
-* @date ${date}
+* 描述:${tableNameCn} controller
+* @Author:${author}
+* @Date:${date}
 */
 @Api(tags = "${tableNameCn}控制器")
 @RequestMapping("/${changeTableName?uncap_first}")

@@ -97,7 +97,6 @@ public class JdbcUtil {
         String changeTableName = CommonUtil.replaceUnderLineAndUpperCase(tableName, Config.isDelPrefix);
         dataMap.put("changeTableName", changeTableName);
         dataMap.put("lowerCaseFirst",CommonUtil.toLowerCaseFirstOne(changeTableName));
-        dataMap.put("logClassName", StringUtils.isEmpty(Config.recordLogClass)? Config.recordLogClazzsMap.get(dbName):Config.recordLogClass);
         return dataMap;
     }
 

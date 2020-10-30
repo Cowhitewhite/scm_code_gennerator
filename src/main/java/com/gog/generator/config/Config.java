@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -47,12 +45,6 @@ public class Config {
     public static String description = "";
     public static String author;
     public static String date = getDate();
-    /**
-     * 指定操作日志泛型类，如果为空则通过下面recordLogClazzsMap中取数据库名称对应的值
-     * 注意：如果泛型与数据库不匹配需要自己指定（如贸易使用的是订单库ocss_orders，但是日志泛型类需指定为TradeRecordLog）
-     */
-    public static String recordLogClass;
-    public static Map<String, String> recordLogClazzsMap = new HashMap();
 
     public static String getDate() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
@@ -74,14 +66,6 @@ public class Config {
             basePackage = properties.getProperty("basePackage");
             description = properties.getProperty("description");
             author = properties.getProperty("author");
-            recordLogClass = properties.getProperty("recordLogClass");
-            String recordLogClazzsMaps = properties.getProperty("recordLogClazzsMap");
-            String[] split = recordLogClazzsMaps.split(",");
-            for (String s : split) {
-                String[] split1 = s.split(":");
-                recordLogClazzsMap.put(split1[0], split1[1]);
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -22,9 +22,9 @@ import java.util.List;
 <#assign class=changeTableName?uncap_first>
 
 /**
-* 描述：${tableNameCn} serviceImpl
-* @author ${author}
-* @date ${date}
+* @Description:${tableNameCn} serviceImpl
+* @author:${author}
+* @date:${date}
 */
 @Slf4j
 @Service

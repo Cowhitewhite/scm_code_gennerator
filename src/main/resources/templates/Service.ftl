@@ -8,9 +8,9 @@ import ${basePackage}.vo.req.WarehouseReq;
 import java.util.List;
 
 /**
-* @Description：${tableNameCn} service
-* @author ${author}
-* @date ${date}
+* @Description:${tableNameCn} service
+* @author:${author}
+* @date:${date}
 */
 
 public interface ${changeTableName}Service{

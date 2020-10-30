@@ -6,9 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
-* @Description：${tableNameCn} Dao
-* @author ${author}
-* @date ${date}
+* @Description:${tableNameCn} Dao
+* @Author:${author}
+* @Date:${date}
 */
 @Mapper
 public interface ${changeTableName}Dao{
