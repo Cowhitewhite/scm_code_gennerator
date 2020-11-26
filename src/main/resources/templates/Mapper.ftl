@@ -11,7 +11,7 @@
         <result property="id" column="id"/>
         <#if model_column?exists>
             <#list model_column as model>
-        <result property="${model.changeColumnName?uncap_first}" column="${model.columnName}">
+        <result property="${model.changeColumnName?uncap_first}" column="${model.columnName}"/>
             </#list>
         </#if>
         <result property="deleted" column="delete"/>
@@ -25,7 +25,7 @@
           t.id,
           <#if model_column?exists>
             <#list model_column as model>
-          t.${model.columnName} as ${model.changeColumnName?uncap_first}
+          t.${model.columnName} as ${model.changeColumnName?uncap_first},
             </#list>
           </#if>
           t.deleted,
@@ -50,7 +50,7 @@
           t.id,
         <#if model_column?exists>
             <#list model_column as model>
-          t.${model.columnName} as ${model.changeColumnName?uncap_first}
+          t.${model.columnName} as ${model.changeColumnName?uncap_first},
             </#list>
         </#if>
           t.deleted,
@@ -68,7 +68,7 @@
           t.id,
         <#if model_column?exists>
             <#list model_column as model>
-          t.${model.columnName} as ${model.changeColumnName?uncap_first}
+          t.${model.columnName} as ${model.changeColumnName?uncap_first},
             </#list>
         </#if>
           t.deleted,
@@ -87,7 +87,7 @@
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
         insert into scm_warehouse(<#if model_column?exists><#list model_column as model>${model.columnName},</#list></#if>
            deleted,create_time,update_time)
-        values (<#if model_column?exists><#list model_column as model>${model.changeColumnName?uncap_first},</#list></#if>
+        values (<#if model_column?exists><#list model_column as model>${a + b + model.changeColumnName?uncap_first + c},</#list></#if>
         ${a + b + "deleted" + c},${a + b + "creatTime" + c},now())
     </insert>
 

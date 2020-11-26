@@ -22,10 +22,10 @@ import java.com.gog.generator.util.Date;
 </#if>
 
 /**
- * @Description:${tableNameCn} 查询Req
- * @author:${author}
- * @date:${date}
- */
+* @author ChenHao
+* @version 1.0
+* @date ${date}
+*/
 @Data
 public class ${changeTableName}Req extends BaseRequest{
 

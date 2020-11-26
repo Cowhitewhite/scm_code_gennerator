@@ -1,10 +1,15 @@
 package ${basePackage}.controller;
 
+<#assign Service=changeTableName+"Service">
+<#assign service=changeTableName?uncap_first+"Service">
+<#assign Req=changeTableName+"Req">
+<#assign req=changeTableName?uncap_first+"Req">
+
 import com.gog.scm.common.base.PageResult;
 import com.gog.scm.common.base.ResultData;
-import ${basePackage}.entity.Warehouse;
-import ${basePackage}.service.WarehouseService;
-import ${basePackage}.vo.req.WarehouseReq;
+import ${basePackage}.entity.${changeTableName};
+import ${basePackage}.service.${Service};
+import ${basePackage}.vo.req.${Req};
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +19,10 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
-<#assign Service=changeTableName+"Service">
-<#assign service=changeTableName?uncap_first+"Service">
-<#assign Req=changeTableName+"Req">
-<#assign req=changeTableName?uncap_first+"Req">
 /**
-* 描述:${tableNameCn} controller
-* @Author:${author}
-* @Date:${date}
+* @author ChenHao
+* @version 1.0
+* @date ${date}
 */
 @Api(tags = "${tableNameCn}控制器")
 @RequestMapping("/${changeTableName?uncap_first}")
@@ -38,8 +39,8 @@ public class ${changeTableName}Controller{
     */
     @PostMapping("/Pagelist")
     @ApiOperation(value = "查询分页列表",notes = "查询分页列表")
-    public ResultData<PageResult<${changeTableName}>> ${changeTableName}PageList(@RequestBody ${Req} ${req}){
-        return ${service}.getPageList(warehouseReq);
+    public ResultData<PageResult<${changeTableName}>> ${changeTableName}PageList(@RequestBody ${Req} ){
+        return ${service}.getPageList(${req});
     }
 
     /**
@@ -50,7 +51,7 @@ public class ${changeTableName}Controller{
     @PostMapping("/list")
     @ApiOperation(value = "查询不分页列表",notes = "查询不分页列表")
     public ResultData<List<${changeTableName}>> ${changeTableName}List(@RequestBody ${Req} ${req}){
-        return ${service}.getList(warehouseReq);
+        return ${service}.getList(${req});
     }
 
 
@@ -83,8 +84,8 @@ public class ${changeTableName}Controller{
     */
     @PostMapping("/save")
     @ApiOperation(value = "保存",notes = "保存")
-    public ResultData<String> ${changeTableName}Save(@RequestBody @Valid ${changeTableName} ${lowerCaseFirst}){
-        return ${service}.save(warehouse);
+    public ResultData<String> ${changeTableName}Save(@RequestBody @Valid ${changeTableName} ){
+        return ${service}.save(${lowerCaseFirst});
     }
 
     /**
@@ -95,7 +96,7 @@ public class ${changeTableName}Controller{
     @PutMapping("/update")
     @ApiOperation(value = "更新",notes = "更新")
     public ResultData<String> ${changeTableName}Update(@RequestBody ${changeTableName} ${lowerCaseFirst}){
-        return ${service}.update(warehouse);
+        return ${service}.update(${lowerCaseFirst});
     }
 
     /**

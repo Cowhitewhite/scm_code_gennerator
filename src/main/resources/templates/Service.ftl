@@ -2,17 +2,16 @@ package ${basePackage}.api;
 
 import com.gog.scm.common.base.PageResult;
 import com.gog.scm.common.base.ResultData;
-import ${basePackage}.entity.Warehouse;
-import ${basePackage}.vo.req.WarehouseReq;
+import ${basePackage}.entity.${changeTableName};
+import ${basePackage}.vo.req.${changeTableName}Req;
 
 import java.util.List;
 
 /**
-* @Description:${tableNameCn} service
-* @author:${author}
-* @date:${date}
+* @author ChenHao
+* @version 1.0
+* @date ${date}
 */
-
 public interface ${changeTableName}Service{
 
     /**
@@ -34,7 +33,7 @@ public interface ${changeTableName}Service{
     * @param id
     * @return
     */
-    ResultData<WarehouseVO> findById(Long id);
+    ResultData<${changeTableName}> findById(Long id);
 
     /**
     * 保存

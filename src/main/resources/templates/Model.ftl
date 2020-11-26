@@ -2,7 +2,6 @@ package ${basePackage}.entity;
 
 import com.gog.scm.common.base.BaseEntity;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.com.gog.generator.util.Date;
@@ -21,10 +20,10 @@ import java.math.BigDecimal;
 </#if>
 
 /**
- * @Description:${tableNameCn}
- * @Author:${author}
- * @Date:${date}
- */
+* @author ChenHao
+* @version 1.0
+* @date ${date}
+*/
 @Data
 public class ${changeTableName} extends BaseEntity implements Serializable{
 
